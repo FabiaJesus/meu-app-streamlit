@@ -66,7 +66,7 @@ st.subheader("🛒 Análise de Vendas")
 query_canal = f"""
 SELECT canal_aquisicao, SUM(valor_total) AS receita
 FROM vendas
-WHERE data_venda >= {data_inicio}
+WHERE data_venda >= '{data_inicio}'
 GROUP BY canal_aquisicao;
 """
 df_canal = pd.read_sql(query_canal, conn)
